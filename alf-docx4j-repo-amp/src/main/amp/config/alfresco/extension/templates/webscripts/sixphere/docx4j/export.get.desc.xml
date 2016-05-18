@@ -1,0 +1,8 @@
+<webscript>
+   <shortname>Alfresco docx4j integrator</shortname>
+   <family>Sixphere Services</family>
+   <description>Generate an instance of the template with node metadata</description>
+   <url>/sixphere/docx4j/export?nodeRef={nodeRef?}&amp;templateRef={templateRef?}&amp;name={name?}</url>
+   <format default="json">extension</format>
+   <authentication>user</authentication>
+</webscript>

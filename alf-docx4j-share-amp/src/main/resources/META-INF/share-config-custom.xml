@@ -1,0 +1,201 @@
+<!-- Share configuration related to this particular Share module extension, 
+	such as: - Doclib action config - Form config - Aspect and Type config Note. 
+	Any configuration related to the whole Share.war webapp (i.e. not specific 
+	to this share extension) should be placed in the environment specific config: 
+	alfresco-allinone/share/src/main/resources/alfresco/web-extension/share-config-custom.xml 
+	file -->
+<alfresco-config>
+	<config evaluator="string-compare" condition="DocLibActions">
+		<actions>
+			<action id="export-to-docx4j" type="javascript"
+				label="actions.sixphere.exportMetadata" icon="document-download">
+				<param name="function">onActionSimpleRepoAction</param>
+				<permissions>
+					<permission allow="true">Write</permission>
+				</permissions>
+				<param name="action">export-to-docx4j</param>
+				<param name="successMessage">actions.sixphere.export-to-docx4j.success</param>
+				<param name="failureMessage">actions.sixphere.export-to-docx4j.failure</param>
+			</action>
+		</actions>
+
+		<actionGroups>
+			<actionGroup id="document-browse">
+				<action index="100" id="document-download" appendEvaluators="true">
+					<evaluator>evaluator.doclib.action.DocumentEnableInSmartFolder
+					</evaluator>
+				</action>
+				<action index="105" id="export-to-docx4j" appendEvaluators="true">
+					<evaluator>evaluator.doclib.action.DocumentEnableInSmartFolder
+					</evaluator>
+				</action>
+				<action index="110" id="document-view-content"
+					appendEvaluators="true">
+					<evaluator>evaluator.doclib.action.DocumentEnableInSmartFolder
+					</evaluator>
+				</action>
+				<action index="120" id="document-locate" appendEvaluators="true">
+					<evaluator>evaluator.doclib.action.DocumentEnableInSmartFolder
+					</evaluator>
+				</action>
+				<action index="130" id="document-edit-properties"
+					appendEvaluators="true">
+					<evaluator>evaluator.doclib.action.DocumentEnableInSmartFolder
+					</evaluator>
+				</action>
+				<action index="140" id="document-upload-new-version"
+					appendEvaluators="true">
+					<evaluator>evaluator.doclib.action.DocumentEnableInSmartFolder
+					</evaluator>
+				</action>
+				<action index="150" id="document-view-original"
+					appendEvaluators="true">
+					<evaluator>evaluator.doclib.action.DocumentEnableInSmartFolder
+					</evaluator>
+				</action>
+				<action index="160" id="document-view-working-copy"
+					appendEvaluators="true">
+					<evaluator>evaluator.doclib.action.DocumentEnableInSmartFolder
+					</evaluator>
+				</action>
+				<action index="170" id="document-approve" />
+				<action index="180" id="document-reject" />
+				<action index="190" id="document-inline-edit"
+					appendEvaluators="true">
+					<evaluator>evaluator.doclib.action.DocumentEnableInSmartFolder
+					</evaluator>
+				</action>
+				<action index="200" id="document-edit-online" />
+				<action index="201" id="document-edit-online-aos"
+					appendEvaluators="true">
+					<evaluator>evaluator.doclib.action.DocumentEnableInSmartFolder
+					</evaluator>
+				</action>
+				<action index="210" id="document-edit-offline"
+					appendEvaluators="true">
+					<evaluator>evaluator.doclib.action.DocumentEnableInSmartFolder
+					</evaluator>
+				</action>
+				<action index="250" id="document-copy-to" />
+				<action index="260" id="document-move-to" />
+				<action index="270" id="document-delete" />
+				<action index="280" id="document-assign-workflow"
+					appendEvaluators="true">
+					<evaluator>evaluator.doclib.action.DocumentEnableInSmartFolder
+					</evaluator>
+				</action>
+				<action index="290" id="document-cancel-editing"
+					appendEvaluators="true">
+					<evaluator>evaluator.doclib.action.DocumentEnableInSmartFolder
+					</evaluator>
+				</action>
+				<action index="295" id="document-cancel-editing-unlock" icon="document-cancel-editing"
+					appendEvaluators="true">
+					<evaluator>evaluator.doclib.action.DocumentEnableInSmartFolder
+					</evaluator>
+				</action>
+				<action index="297" id="document-manage-granular-permissions" />
+				<action index="298" id="document-manage-repo-permissions" />
+				<action index="310" id="document-view-googlemaps" />
+				<action index="320" id="document-view-in-source-repository" />
+				<action index="330" id="document-cloud-sync" />
+				<action index="340" id="document-cloud-unsync" />
+				<action index="350" id="document-view-in-cloud" />
+				<action index="360" id="document-request-sync" />
+			</actionGroup>
+
+			<actionGroup id="document-details">
+				<action index="100" id="export-to-docx4j" subgroup="10"
+					appendEvaluators="true"> <!-- effectiveIndex=10110 -->
+					<evaluator>evaluator.doclib.action.DocumentEnableInSmartFolder
+					</evaluator>
+				</action>
+				<!-- An effective index is built using the subgroup and index -->
+				<action index="110" id="document-view-content" subgroup="10"
+					appendEvaluators="true"> <!-- effectiveIndex=10110 -->
+					<evaluator>evaluator.doclib.action.DocumentEnableInSmartFolder
+					</evaluator>
+				</action>
+				<action index="210" id="document-approve" subgroup="20" />
+				<action index="220" id="document-reject" subgroup="20" />
+				<action index="310" id="document-cancel-editing" subgroup="30"
+					appendEvaluators="true">
+					<evaluator>evaluator.doclib.action.DocumentEnableInSmartFolder
+					</evaluator>
+				</action>
+				<action index="320" id="document-cancel-editing-unlock"
+					subgroup="30" icon="document-cancel-editing" appendEvaluators="true">
+					<evaluator>evaluator.doclib.action.DocumentEnableInSmartFolder
+					</evaluator>
+				</action>
+				<action index="330" id="document-inline-edit" subgroup="30"
+					appendEvaluators="true">
+					<evaluator>evaluator.doclib.action.DocumentEnableInSmartFolder
+					</evaluator>
+				</action>
+				<action index="340" id="document-edit-online-aos" subgroup="30"
+					appendEvaluators="true">
+					<evaluator>evaluator.doclib.action.DocumentEnableInSmartFolder
+					</evaluator>
+				</action>
+				<action index="350" id="document-edit-online" subgroup="30" />
+				<action index="360" id="document-edit-offline" subgroup="30"
+					appendEvaluators="true">
+					<evaluator>evaluator.doclib.action.DocumentEnableInSmartFolder
+					</evaluator>
+				</action>
+				<action index="370" id="document-upload-new-version"
+					subgroup="30" appendEvaluators="true">
+					<evaluator>evaluator.doclib.action.DocumentEnableInSmartFolder
+					</evaluator>
+				</action>
+				<action index="380" id="document-view-original" subgroup="30"
+					appendEvaluators="true">
+					<evaluator>evaluator.doclib.action.DocumentEnableInSmartFolder
+					</evaluator>
+				</action>
+				<action index="390" id="document-view-working-copy" subgroup="30"
+					appendEvaluators="true">
+					<evaluator>evaluator.doclib.action.DocumentEnableInSmartFolder
+					</evaluator>
+				</action>
+				<action index="410" id="document-edit-metadata" subgroup="40"
+					appendEvaluators="true">
+					<evaluator>evaluator.doclib.action.DocumentEnableInSmartFolder
+					</evaluator>
+				</action>
+				<action index="510" id="document-move-to" subgroup="50" />
+				<action index="520" id="document-copy-to" subgroup="50" />
+				<action index="530" id="document-unzip-to" subgroup="50" />
+				<action index="540" id="document-delete" subgroup="50" />
+				<action index="610" id="document-cloud-sync" subgroup="60" />
+				<action index="620" id="document-cloud-unsync" subgroup="60" />
+				<action index="630" id="document-view-in-cloud" subgroup="60" />
+				<action index="640" id="document-request-sync" subgroup="60" />
+				<action index="710" id="document-assign-workflow" subgroup="70"
+					appendEvaluators="true">
+					<evaluator>evaluator.doclib.action.DocumentEnableInSmartFolder
+					</evaluator>
+				</action>
+				<action index="720" id="document-manage-granular-permissions"
+					subgroup="70" />
+				<action index="730" id="document-manage-repo-permissions"
+					subgroup="70" />
+				<action index="740" id="document-take-ownership" subgroup="70" />
+				<action index="750" id="document-manage-aspects" subgroup="70"
+					appendEvaluators="true">
+					<evaluator>evaluator.doclib.action.DocumentEnableInSmartFolder
+					</evaluator>
+				</action>
+				<action index="760" id="document-change-type" subgroup="70"
+					appendEvaluators="true">
+					<evaluator>evaluator.doclib.action.DocumentEnableInSmartFolder
+					</evaluator>
+				</action>
+				<action index="770" id="document-view-in-source-repository"
+					subgroup="70" />
+				<action index="780" id="document-view-googlemaps" subgroup="70" />
+			</actionGroup>
+		</actionGroups>
+	</config>
+</alfresco-config>

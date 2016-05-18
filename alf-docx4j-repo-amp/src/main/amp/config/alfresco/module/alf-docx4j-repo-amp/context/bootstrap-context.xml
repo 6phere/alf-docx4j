@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+          http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+
+    <bean id="alf-docx4j-repo-amp.dictionaryBootstrap" parent="dictionaryModelBootstrap" depends-on="dictionaryBootstrap">
+        <property name="models">
+            <list>
+                <value>alfresco/module/${project.artifactId}/model/content-model.xml</value>
+            </list>
+        </property>
+    </bean>
+
+	<!-- workaround for running SpringLoaded -->
+	<!-- Until this ticket is fixed. https://github.com/Alfresco/alfresco-sdk/issues/369 -->
+	<bean id="unserializerValidatorBootstrap" abstract="true" />
+    
+</beans>

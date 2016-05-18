@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="six:contentModel" xmlns="http://www.alfresco.org/model/dictionary/1.0">
+
+    <description>Document Model for Alfresco Docx4j Integrator</description>
+    <author>Sixphere Technologies</author>
+    <version>1.0</version>
+
+    <imports>
+        <!-- Import Alfresco Dictionary Definitions -->
+        <import uri="http://www.alfresco.org/model/dictionary/1.0" prefix="d"/>
+        <!-- Import Alfresco Content Domain Model Definitions -->
+        <import uri="http://www.alfresco.org/model/content/1.0" prefix="cm"/>
+        <!-- Import Alfresco System Model Definitions -->
+        <import uri="http://www.alfresco.org/model/system/1.0" prefix="sys"/>
+    </imports>
+
+    <namespaces>
+        <namespace uri="http://www.mycompany.com/model/content/1.0" prefix="six"/>
+    </namespaces>
+
+</model>
