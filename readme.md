@@ -3,6 +3,9 @@
 This is an Alfresco module that allows to print a document metadata into a docx/xlsx template, using Docx4j library.
 The fucntionality is available via a webscript or action into the repo and the action is available in share as well.
 
+# Getting Started
+Reading [Getting started] wiki page you'll get info about how to use this module.
+
 # Versions supported
 This module has developed to be compatible with Alfresco 5.0, 5.1 and Docx4j 3.2.2
 
@@ -20,6 +23,7 @@ Searching for strong professional relationships, supplying strong technical skil
 ## Contact
 Want to comment or share something, contact us info@sixphere.com
 
+[Getting started]: <https://github.com/6phere/alf-docx4j/wiki/Alfresco-Docx4j-metadata-exporter-Wiki#getting-started>
 [Sixphere Technologies]: <http://www.sixphere.com>
 [Sixphere]: <http://www.sixphere.com>
 [...]: <https://raw.githubusercontent.com/6phere/alf-docx4j/master/LICENSE>
